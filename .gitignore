@@ -1,5 +1,6 @@
 # Maven
-/target/
+target/
+.mvn/
 
 # IntelliJ IDEA
 .idea/
@@ -37,3 +38,22 @@ native/javuntu-launcher.exe
 *.zip
 *.tar.gz
 *.rar
+
+# Eclipse #
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans #
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
