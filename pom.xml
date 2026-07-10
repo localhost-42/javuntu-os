@@ -8,7 +8,7 @@
     <artifactId>javuntu-os</artifactId>
     <version>0.1.0</version>
     <name>JavuntuOS</name>
-    <description>A tiny Java-based Linux desktop shell prototype by Yoav Segev.</description>
+    <description>A tiny Java-based Linux desktop shell prototype</description>
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
