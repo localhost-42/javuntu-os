@@ -3,7 +3,7 @@ package org.javuntu.launcher;
 import java.util.Arrays;
 
 public final class JavuntuLauncher implements Launcher {
-    private JavuntuLauncher() {
+    public JavuntuLauncher() {
     }
 
     @Override
