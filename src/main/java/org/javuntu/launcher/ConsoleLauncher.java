@@ -1,8 +1,12 @@
 package org.javuntu.launcher;
 
+import org.javuntu.shell.ConsoleShell;
+
 public class ConsoleLauncher implements Launcher {
     @Override
     public void run(String[] args) {
-        // // run console shell (cli)
+        ConsoleShell consoleShell = new ConsoleShell();
+
+        consoleShell.run();
     }
 }
