@@ -1,6 +1,6 @@
 package org.javuntu.launcher;
 
-/*
+/**
 Javuntu Launcher:
 
 Boot:
