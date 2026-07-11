@@ -13,7 +13,7 @@ package org.javuntu.metadata;
  * not contain Javuntu's logic, but information that describes Javuntu.
  */
 
-public final class AppMetadata {
+public class AppMetadata {
     public static final String NAME = "Javuntu";
     public static final String VERSION = "0.1.1";
     public static final String AUTHOR = "Yoav Segev";
