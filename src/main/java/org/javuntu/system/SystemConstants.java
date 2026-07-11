@@ -20,10 +20,6 @@ public class SystemConstants {
     public static final String USER_HOME_KEY = "user.home";
     public static final String USER_WORKING_DIRECTORY_KEY = "user.dir";
 
-    /// File system constants
-    public static final String[] FILE_SIZE_UNITS = {"B", "KB", "MB", "GB", "TB"};
-    public static final int FILE_SIZE_UNIT_LIMIT = 1024;
-
     private SystemConstants() {
     }
 }
