@@ -1,6 +1,6 @@
 package org.javuntu.launcher;
 
-import org.javuntu.shell.ConsoleShell;
+import org.javuntu.shell.ui.ConsoleShell;
 
 public class ConsoleLauncher implements Launcher {
     @Override

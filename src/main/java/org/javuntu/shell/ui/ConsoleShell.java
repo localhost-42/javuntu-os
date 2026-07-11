@@ -1,4 +1,4 @@
-package org.javuntu.shell;
+package org.javuntu.shell.ui;
 
 public class ConsoleShell implements ShellUI {
     public ConsoleShell() {
