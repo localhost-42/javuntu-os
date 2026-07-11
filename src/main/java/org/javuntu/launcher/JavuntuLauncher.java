@@ -2,26 +2,17 @@ package org.javuntu.launcher;
 
 import java.util.Arrays;
 
-public final class JavuntuLauncher implements Launcher {
-    public JavuntuLauncher() {
+public final class JavuntuLauncher {
+    private JavuntuLauncher() {
     }
 
-    @Override
-    public void run(String[] args) {
+    public static void run(String[] args) {
         boolean shellOnly = Arrays.asList(args).contains("--shell");
 
-        if (shellOnly) {
-            runConsoleBootstrap();
-        } else {
-            runDesktopBootstrap();
-        }
-    }
+        Launcher launcher = shellOnly ?
+                new ConsoleLauncher() :
+                new DesktopLauncher();
 
-    private void runConsoleBootstrap() {
-        // run console ui (CLI)
-    }
-
-    private void runDesktopBootstrap() {
-        // run desktop ui (GUI)
+        launcher.run(args);
     }
 }
