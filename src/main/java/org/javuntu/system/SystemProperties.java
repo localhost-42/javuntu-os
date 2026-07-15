@@ -11,6 +11,10 @@ public class SystemProperties {
         return System.getProperty(key, DEFAULT_VALUE);
     }
 
+    public static String getProperty(String key, String defaultValue) {
+        return System.getProperty(key, defaultValue);
+    }
+
     public static String now() {
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT));
     }
