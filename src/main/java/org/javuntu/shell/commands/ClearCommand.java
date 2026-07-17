@@ -23,7 +23,7 @@ public class ClearCommand implements Command {
     }
 
     @Override
-    public CommandResult execute(CommandContext context, List<String> args) {
+    public CommandResult execute(CommandContext context, String... args) {
         return CommandResult.clearScreen();
     }
 }

@@ -25,7 +25,7 @@ public class WhoAmICommand implements Command {
     }
 
     @Override
-    public CommandResult execute(CommandContext context, List<String> args) {
+    public CommandResult execute(CommandContext context, String... args) {
         return CommandResult.text(
                 SystemProperties.getProperty(SystemConstants.USER_NAME_KEY, "user")
         );

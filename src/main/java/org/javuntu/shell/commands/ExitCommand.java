@@ -23,7 +23,7 @@ public class ExitCommand implements Command {
     }
 
     @Override
-    public CommandResult execute(CommandContext context, List<String> args) {
+    public CommandResult execute(CommandContext context, String... args) {
         return CommandResult.exit();
     }
 }

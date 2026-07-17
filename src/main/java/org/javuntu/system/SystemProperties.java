@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class SystemProperties {
     public static final String DEFAULT_VALUE = "unknown";
-    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     public static String getProperty(String key) {
         return System.getProperty(key, DEFAULT_VALUE);

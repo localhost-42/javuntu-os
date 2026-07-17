@@ -26,5 +26,5 @@ public interface Command {
 
     String usage();
 
-    CommandResult execute(CommandContext context, List<String> args);
+    CommandResult execute(CommandContext context, String... args);
 }
