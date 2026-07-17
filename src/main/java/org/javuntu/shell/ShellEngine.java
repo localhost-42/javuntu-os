@@ -32,13 +32,13 @@ public class ShellEngine {
         String commandName = tokens.get(0);
         List<String> args = new ArrayList<>(tokens.subList(1, tokens.size()));
 
-        Command command = registry.getCommand(commandName);
+        try {
+            Command command = registry.getCommand(commandName);
 
-        if (command != null) {
             return command.execute(context, String.valueOf(args));
+        } catch (CommandNotExistException exception) {
+            return runExternalCommand(tokens);
         }
-
-        return runExternalCommand(tokens);
     }
 
     private CommandResult runExternalCommand(List<String> tokens) {
