@@ -14,7 +14,7 @@ public class SystemFilesystem {
     // 1024 B  -> 1 KB
     // 1024 KB -> 1 MB
     // 1024 MB -> 1 GB
-    private static String formatBytes(long value) {
+    public static String formatBytes(long value) {
         // If the size is unavailable
         if (value < 0) {
             return SystemProperties.DEFAULT_VALUE;

@@ -15,7 +15,7 @@ public class CommandRegistry {
 
     private void init(Command[] commands) {
         for (Command command : commands) {
-            registry.put(command.name(), command);
+            register(command);
         }
     }
 
