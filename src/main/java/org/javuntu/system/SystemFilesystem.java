@@ -1,6 +1,10 @@
 package org.javuntu.system;
 
+import java.nio.file.FileStore;
+import java.nio.file.FileSystems;
 import java.text.DecimalFormat;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class SystemFilesystem {
     /// File system constants
@@ -30,6 +34,56 @@ public class SystemFilesystem {
     }
 
     public static String getFilesystemReport() {
-        return null;
+        StringBuilder result = new StringBuilder();
+        Set<String> seenFileStores = new LinkedHashSet<>();
+
+        for (FileStore store : FileSystems.getDefault().getFileStores()) {
+            try {
+                long totalSpace = store.getTotalSpace();
+                long usableSpace = store.getUsableSpace();
+                long freeSpace = store.getUnallocatedSpace();
+
+                // In case of virtual stores
+                if (totalSpace <= 0) {
+                    continue;
+                }
+
+                String storeName = store.name().isBlank() ? store.toString() : store.name();
+                String storeId = String.format("%s-%s-%s", storeName, store.type(), totalSpace);
+
+                // Check if we already handle this file store/volume
+                if (seenFileStores.add(storeId)) {
+
+                    result.append(formatFileStore(
+                            storeName, store.type(), totalSpace, usableSpace, freeSpace)
+                    ).append("\n");
+                }
+            } catch (Exception ignored) {
+                // Some virtual filesystems do not expose space information.
+            }
+        }
+
+        if (result.isEmpty()) {
+            result.append("\tNo filesystem details available.\n");
+        }
+
+        return result.toString();
+    }
+
+    private static String formatFileStore(String name, String type,
+            long totalSpace, long usableSpace, long freeSpace) {
+
+        return String.format("""
+              %s [%s]
+                Total:  %s
+                Usable: %s
+                Free:   %s
+            """,
+                name,
+                type,
+                formatBytes(totalSpace),
+                formatBytes(usableSpace),
+                formatBytes(freeSpace)
+        );
     }
 }
