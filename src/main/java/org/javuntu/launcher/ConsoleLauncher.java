@@ -8,6 +8,7 @@ public class ConsoleLauncher implements Launcher {
     public void run(String[] args) {
         ConsoleShell consoleShell = new ConsoleShell(new ShellEngine());
 
+        consoleShell.build();
         consoleShell.run();
     }
 }

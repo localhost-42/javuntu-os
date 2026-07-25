@@ -16,12 +16,19 @@ import java.awt.*;
  * window management, session management, notifications, etc.
  */
 public class DesktopShell extends JFrame implements ShellUI {
+    private final CardLayout desktopFragments;
+    private final JPanel content;
+    private final JLabel clockLabel;
 
     public DesktopShell(String name) {
         super(name);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(960, 620));
         setLocationRelativeTo(null);
+
+        desktopFragments = new CardLayout();
+        content = new JPanel(desktopFragments);
+        clockLabel = new JLabel();
     }
 
     @Override
