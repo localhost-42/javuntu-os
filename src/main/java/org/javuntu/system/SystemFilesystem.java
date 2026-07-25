@@ -8,8 +8,6 @@ public class SystemFilesystem {
     public static final String[] FILE_SIZE_UNITS = {"B", "KB", "MB", "GB", "TB"};
     public static final int FILE_SIZE_UNIT_FACTOR = 1024;
 
-
-
     // Format raw bits size (15423876) to readable format (14.6 MB)
     // 1024 B  -> 1 KB
     // 1024 KB -> 1 MB
@@ -29,5 +27,9 @@ public class SystemFilesystem {
         }
 
         return ONE_DECIMAL.format(size) + " " + FILE_SIZE_UNITS[unitIndex];
+    }
+
+    public static String getFilesystemReport() {
+        return null;
     }
 }
