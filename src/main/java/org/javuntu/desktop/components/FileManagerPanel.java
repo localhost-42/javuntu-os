@@ -1,8 +1,16 @@
 package org.javuntu.desktop.components;
 
-public class FileManagerPanel implements DesktopComponent {
-    @Override
-    public void build(String title) {
+import javax.swing.*;
+import java.awt.*;
+
+public class FileManagerPanel extends JPanel {
+    public FileManagerPanel(String label) {
+        super(new BorderLayout(10, 10));
+
+        build(label);
+    }
+
+    private void build(String label) {
 
     }
 }
